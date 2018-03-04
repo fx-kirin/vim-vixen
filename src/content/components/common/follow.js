@@ -4,7 +4,8 @@ import * as dom from 'shared/utils/dom';
 
 const TARGET_SELECTOR = [
   'a', 'button', 'input', 'textarea', 'area',
-  '[contenteditable=true]', '[contenteditable=""]', '[tabindex]'
+  '[contenteditable=true]', '[contenteditable=""]', '[tabindex]',
+  '[role="button"]'
 ].join(',');
 
 
@@ -27,6 +28,21 @@ const inViewport = (win, element, viewSize, framePosition) => {
     return false;
   }
   return true;
+};
+
+const isAriaHiddenOrAriaDisabled = (win, element) => {
+  if (!element || win.document.documentElement === element) {
+    return false;
+  }
+  for (let attr of ['aria-hidden', 'aria-disabled']) {
+    if (element.hasAttribute(attr)) {
+      let hidden = element.getAttribute(attr).toLowerCase();
+      if (hidden === '' || hidden === 'true') {
+        return true;
+      }
+    }
+  }
+  return isAriaHiddenOrAriaDisabled(win, element.parentNode);
 };
 
 export default class Follow {
@@ -174,6 +190,7 @@ export default class Follow {
         style.visibility !== 'hidden' &&
         element.type !== 'hidden' &&
         element.offsetHeight > 0 &&
+        !isAriaHiddenOrAriaDisabled(win, element) &&
         inViewport(win, element, viewSize, framePosition);
     });
     return filtered;

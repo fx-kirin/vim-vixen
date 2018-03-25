@@ -41,5 +41,11 @@ module.exports = function (config) {
       'karma-webpack',
       'karma-mocha-reporter',
     ],
+
+    client: {
+      mocha: {
+        timeout: 5000
+      }
+    }
   })
 }

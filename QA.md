@@ -21,16 +21,10 @@ The behaviors of the console are tested in [Console section](#consoles).
 
 #### Tabs
 
-- [ ] <kbd>d</kbd>: delete current tab, unable to remove pinnned tab
 - [ ] <kbd>!d</kbd>: delete current tab and pinned tab
 - [ ] <kbd>u</kbd>: reopen close tab
-- [ ] <kbd>K</kbd>, <kbd>J</kbd>: select prev and next tab
-- [ ] <kbd>g0</kbd>, <kbd>g$</kbd>: select first and last tab
 - [ ] <kbd>r</kbd>: reload current tab
 - [ ] <kbd>R</kbd>: reload current tab without cache
-- [ ] <kbd>zd</kbd>: duplicate current tab
-- [ ] <kbd>zp</kbd>: toggle pin/unpin state on current tab
-- [ ] <kbd>Ctrl</kbd>+<kbd>6</kbd>: select previous selected tab
 
 #### Navigation
 
@@ -42,12 +36,11 @@ The behaviors of the console are tested in [Console section](#consoles).
 
 #### Misc
 
-- [ ] <kbd>z</kbd><kbd>i</kbd>, <kbd>z</kbd><kbd>o</kbd>: zoom-in and zoom-out
-- [ ] <kbd>z</kbd><kbd>z</kbd>: set zoom level as default
 - [ ] <kbd>y</kbd>: yank current URL and show a message
 - [ ] <kbd>p</kbd>: open clipbord's URL in current tab
 - [ ] <kbd>P</kbd>: open clipbord's URL in new tab
 - [ ] Toggle enabled/disabled of plugin bu <kbd>Shift</kbd>+<kbd>Esc</kbd>
+- [ ] Hide error and info console by <kbd>Esc</kbd>
 
 ### Following links
 
@@ -63,6 +56,7 @@ The behaviors of the console are tested in [Console section](#consoles).
 - [ ] Select link and open it in `<area>` tags, for <kbd>f</kbd> and <kbd>F</kbd>
 - [ ] Configure custom hint character by `:set hintchars=012345678`
 - [ ] Configure custom hint character by settings `"hintchars": "012345678"`
+- [ ] Opened tabs is in child on Tree Style Tab
 
 ### Consoles
 
@@ -195,6 +189,7 @@ The behaviors of the console are tested in [Console section](#consoles).
 - [ ] Search next/prev by <kbd>n</kbd>/<kbd>N</kbd>
 - [ ] Wrap search by <kbd>n</kbd>/<kbd>N</kbd>
 - [ ] Find with last keyword if keyword is empty
+- [ ] Find keyword last used on new tab opened
 
 ## Misc
 
